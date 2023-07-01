@@ -21,7 +21,7 @@ for index, row in df.iterrows():
     # Set footer for master page
     # Number of lines to go down to place footer
     pdf.ln(265)
-    pdf.set_font(family="Times", style="I", size=9)
+    pdf.set_font(family="Times", style="I", size=10)
     pdf.set_text_color(25, 25, 112)
     pdf.cell(w=0, h=12, txt=row["Topic"], align="R")
 
@@ -32,7 +32,7 @@ for index, row in df.iterrows():
         # Set footer for other pages
         # Number of lines to go down to place footer
         pdf.ln(277)
-        pdf.set_font(family="Times", style="I", size=8)
+        pdf.set_font(family="Times", style="I", size=10)
         pdf.set_text_color(25, 25, 112)
         pdf.cell(w=0, h=12, txt=row["Topic"], align="R")
 
