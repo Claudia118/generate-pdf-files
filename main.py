@@ -1,16 +1,15 @@
-# This is a sample Python script.
+from fpdf import FPDF
+import pandas as pd
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+pdf = FPDF(orientation="P", unit="mm", format="A4")
 
+# reading CSV file
+df = pd.read_csv("topics.csv")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+for index, row in df.iterrows():
+    # Adding page content
+    pdf.add_page()
+    pdf.set_font(family="Times", style="B", size=12)
+    pdf.cell(w=0, h=12, txt="Hello there", align="L", ln=1, border=1)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+pdf.output("output.pdf")
